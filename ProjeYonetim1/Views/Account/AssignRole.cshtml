@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Kullanıcı Rol Atama";
+}
+
+<h2>Kullanıcı Rol Atama</h2>
+
+<form method="post" asp-action="AssignRole">
+    <div>
+        <label for="userEmail">Kullanıcı E-posta:</label>
+        <input type="email" id="userEmail" name="userEmail" required />
+    </div>
+    <div>
+        <label for="role">Rol Seçin:</label>
+        <input type="text" id="role" name="role" required />
+    </div>
+    <button type="submit">Rol Atama</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}

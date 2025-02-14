@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Hoşgeldiniz - Proje Yönetim Sistemi";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient background */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .wrapper {
+            width: 80%;
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly dark background to contrast text */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            transition: all 0.3s ease;
+        }
+
+            .wrapper:hover {
+                transform: translateY(-10px); /* Hover effect */
+            }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-custom {
+            padding: 12px 30px;
+            background-color: #5a67d8;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+            .btn-custom:hover {
+                background-color: #434190;
+                transform: scale(1.05); /* Button hover effect */
+            }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+            .footer a {
+                color: #5a67d8;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+
+        .icon {
+            margin-bottom: 20px;
+        }
+
+            .icon img {
+                width: 100px;
+                border-radius: 50%;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User Icon">
+        </div>
+        <h1>Hoşgeldiniz, @ViewBag.FullName!</h1>
+        <p>Proje Yönetim Sistemi'ne giriş yaptınız. Sistemdeki işlemlerinize hemen başlayabilirsiniz.</p>
+
+        @if (ViewBag.Role == "Admin")
+        {
+            <a href="@Url.Action("Create", "Project")" class="btn-custom">Yeni Proje Oluştur</a>
+        }
+
+        <a href="@Url.Action("Index", "Project")" class="btn-custom mt-3">Projelerimi Görüntüle</a>
+
+        <div class="footer">
+            <p>Designed with ❤️ by <a href="#">Sude Naz İşci</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model ProjeYonetim1.Models.Task
+
+@{
+    ViewData["Title"] = "Görev Düzenle";
+}
+
+<h2>Görev Düzenle</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="GorevAdi">Görev Adı</label>
+        <input type="text" class="form-control" id="GorevAdi" name="GorevAdi" value="@Model.GorevAdi" required />
+    </div>
+    <div class="form-group">
+        <label for="Aciklama">Açıklama</label>
+        <textarea class="form-control" id="Aciklama" name="Aciklama" required>@Model.Aciklama</textarea>
+    </div>
+    <div class="form-group">
+        <label for="AtananKullanici">Atanan Kullanıcı</label>
+        <input type="text" class="form-control" id="AtananKullanici" name="AtananKullanici" value="@Model.AtananKullanici" required />
+    </div>
+    <div class="form-group">
+        <label for="BaslangicTarihi">Başlangıç Tarihi</label>
+        <input type="date" class="form-control" id="BaslangicTarihi" name="BaslangicTarihi" value="@Model.BaslangicTarihi.ToString("yyyy-MM-dd")" required />
+    </div>
+    <div class="form-group">
+        <label for="BitisTarihi">Bitiş Tarihi</label>
+        <input type="date" class="form-control" id="BitisTarihi" name="BitisTarihi" value="@Model.BitisTarihi.ToString("yyyy-MM-dd")" required />
+    </div>
+    <div class="form-group">
+        <label for="Durum">Durum</label>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
